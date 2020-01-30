@@ -28,19 +28,20 @@ const Container = styled.button<IContainerProps>`
 `
 
 interface IButtonProps {
-    title: string,
-    onClick: any,
+    title?: string,
+    children?: any,
+    onClick?: any,
     block?: boolean,
     squared?: boolean
 }
 
-const Button = ({ title, block, squared, onClick }: IButtonProps) => (
+const Button = ({ title, children, block, squared, onClick }: IButtonProps) => (
     <Container 
         block={ block } 
         squared={ squared } 
         onClick={ onClick }
     >
-        { title }
+        { title }{ children }
     </Container>
 )
 
